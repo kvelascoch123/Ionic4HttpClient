@@ -1,0 +1,7 @@
+{
+  "name": "myProjectCORS",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

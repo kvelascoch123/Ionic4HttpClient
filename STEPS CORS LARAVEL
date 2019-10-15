@@ -1,0 +1,29 @@
+
+
+SOLVED CORS IN LARAVEL
+php artisan make:middleware CORS
+=================================
+Middleware
+CORS => INSERT
+public function handle($request, Closure $next)
+    {
+        header('Access-Control-Allow-Origin: *'); 
+        header('Access-Control-Allow-Headers: Content-Type, x-xsrf-token');
+        return $next($request);
+    }
+
+================================
+Kernel => add
+$middleware=[ ...
+\App\Http\Middleware\CORS::class, 
+]
+
+middlewareGroups =[
+....
+\App\Http\Middleware\CORS::class, 
+]
+
+routeMiddleware=[
+...
+'CORS' => \App\Http\Middleware\CORS::class,
+]
